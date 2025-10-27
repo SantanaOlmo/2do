@@ -1,0 +1,36 @@
+// Variables
+$primary-color: #3498db;
+$secondary-color: #e74c3c;
+$font-stack: Arial, sans-serif;
+$base-size: 16px;
+ 
+// Mixin (función de estilos reutilizable)
+@mixin button-style($bg-color) {
+  background: $bg-color;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: $base-size;
+  cursor: pointer;
+ 
+  &:hover {
+    background: darken($bg-color, 10%); // función integrada de Sass
+  }
+}
+ 
+// Uso de operaciones matemáticas
+h1 {
+  font-size: $base-size * 2; // 32px
+  color: $primary-color;
+  text-align: center;
+}
+ 
+// Aplicar mixins a botones
+.btn-primary {
+  @include button-style($primary-color);
+}
+ 
+.btn-secondary {
+  @include button-style($secondary-color);
+}

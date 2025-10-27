@@ -1,0 +1,26 @@
+:root {
+  --bs-purple: #6f42c1;
+  --bs-magenta: #d63384;
+  --bs-green: #198754;
+  --bs-yellow: #ffc107;
+  --bs-cyan: #0dcaf0;
+  --bs-orange: #fd7e14;
+  --bs-green-ocean: #1abc9c; /* verde azulado (teal moderno) */
+}
+
+/* Opcional: clases utilitarias para usar directamente */
+.text-purple   { color: var(--bs-purple) !important; }
+.text-magenta  { color: var(--bs-magenta) !important; }
+.text-green    { color: var(--bs-green) !important; }
+.text-yellow   { color: var(--bs-yellow) !important; }
+.text-cyan     { color: var(--bs-cyan) !important; }
+.text-orange   { color: var(--bs-orange) !important; }
+.text-green-ocean { color: var(--bs-green-ocean) !important; }
+
+.bg-purple   { background-color: var(--bs-purple) !important; }
+.bg-magenta  { background-color: var(--bs-magenta) !important; }
+.bg-green    { background-color: var(--bs-green) !important; }
+.bg-yellow   { background-color: var(--bs-yellow) !important; }
+.bg-cyan     { background-color: var(--bs-cyan) !important; }
+.bg-orange   { background-color: var(--bs-orange) !important; }
+.bg-green-ocean { background-color: var(--bs-green-ocean) !important; }

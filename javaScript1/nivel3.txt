@@ -1,0 +1,33 @@
+La poción secreta
+Imagina que eres un mago que prepara pociones. Queremos ver dónde existe cada variable.
+
+ 
+let ingredienteGlobal = "agua"; // Variable global
+ 
+function prepararPocion() {
+  let ingredienteLocal = "dragón lágrima"; // Variable local a la función
+  console.log("Dentro de la función:", ingredienteGlobal); /* EXPLICACION: este console.log devolvería el valor que se le ha 
+  asignado a la variable anteriormente: "agua". Esto se debe a que la llamada a la función ocurre tras esta asignación.*/
+  
+  console.log("Dentro de la función:", ingredienteLocal); /* EXPLICACION: este console.log devolvería el valor que anteriormente
+  se le ha asignado a la variable: "drágima dragón" ya que este consolo.log se produce después de tal asignación. */
+  
+  if (true) {
+    let ingredienteBloque = "polvo de unicornio"; // Variable de bloque
+    console.log("Dentro del bloque:", ingredienteBloque);
+  }
+ 
+  // console.log(ingredienteBloque); /* EXPLICACION: este console.log debería devolvería Reference Error. La variable no ha sido 
+  declarada en el ámbito en el que se ejecuta este console.log, sino que ha sido declarada en un ámbito más constreñido, local o de bloque. */
+
+}
+ 
+prepararPocion();
+ 
+console.log("Fuera de la función:", ingredienteGlobal); // Accede a global
+// console.log(ingredienteLocal); /*EXPLICACION: En este console.log, se devolvería un error, como en el caso anterior,
+la variable ha sido declarada en un nivel inferior, por lo que es inaccesible. */ 
+ 
+Tienes que indicar qué devolvería cada log y explicar por qué (no pruebes el código! Eso sería trampas! Intenta saber qué pasaría solo viendo el código (y explicar por qué, claro).
+
+Para esta parte podéis entregar un txt o un doc con las explicaciones.

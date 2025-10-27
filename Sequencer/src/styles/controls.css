@@ -1,0 +1,35 @@
+#controls{
+  padding: 10px;
+  display: flex;
+  justify-content:space-evenly;
+  gap: 20px;
+  border: 2px solid red;
+  width: 100%;
+  position: relative;
+  top: 0;
+}
+input {
+  width: 50px;
+  height: 25px;
+  border-radius: 50px;
+  border: none;
+  padding: 0 10px;
+  font-size: 16px;
+  text-align: center;
+  /* gradiente de luz a sombra de arriba a abajo */
+  background: linear-gradient(to bottom, #ffffff 0%, #d9d9d985 100%);
+
+  /* sombras internas para efecto de relieve y proyección de carcasa */
+  box-shadow:
+    inset 0 4px 4px rgba(0,0,0,0.2),   /* sombra arriba proyectada por carcasa */
+    inset 0 -2px 2px rgba(0,0,0,0.05); /* sombra suave abajo para profundidad */
+
+  transition: all 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  box-shadow:
+    inset 0 4px 5px rgba(0,0,0,0.25),
+    inset 0 -2px 2px rgba(0,0,0,0.05);
+}

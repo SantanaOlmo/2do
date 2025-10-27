@@ -1,0 +1,56 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 20px;
+    padding: 0;
+}
+
+/* Títulos */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+h3 {
+    color: #34495e;
+}
+
+/* Inputs y select */
+input, select {
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* Botones */
+button {
+    padding: 8px 15px;
+    margin: 5px 5px 5px 0;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Mensajes */
+#message, #magicMessage {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* Separadores */
+br {
+    line-height: 1.5rem;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="nivel1.js" defer></script>
+    <script src="nivel2.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>UD2. Batería Rápida</h1>
+
+    <h3>Nivel2</h3>
+    <input type="number" id="nivelMagia">
+    <select name="typeMagic" id="typeMagic">
+        <option value="invisible">invisible</option>
+        <option value="roja">roja</option>
+        <option value="negra">negra</option>
+    </select>
+    <br><br>
+    <button onclick="evaluateMagic()">Evaluar amenaza</button>
+    <button onclick="showPower()">Mostrar poder</button>
+    <br><br>
+
+    <p id="message"></p>
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8083:80"
+    volumes:
+      - ./contenido_nginx:/usr/share/nginx/html
+
+  apache:
+    image: httpd:latest
+    ports:
+      - "8084:80"
+    volumes:
+      - ./contenido_apache:/usr/local/apache2/htdocs

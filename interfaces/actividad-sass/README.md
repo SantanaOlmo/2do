@@ -34,6 +34,4 @@ Compilo con el siguiente comando
 ````bash
 sass --watch scss/styles.scss css/styles.css
 ````
-
 ![img](assets/image.png)
-

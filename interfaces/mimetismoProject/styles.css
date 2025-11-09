@@ -1,0 +1,338 @@
+/* Base y Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.6;
+    background-color: white; /* Default light mode */
+    color: black; /* Default light mode */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* -------------------------------------- */
+/* 1. HEADER */
+/* -------------------------------------- */
+
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: transparent;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 50px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu ul {
+    display: flex;
+    gap: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* -------------------------------------- */
+/* 2. HERO SECTION */
+/* -------------------------------------- */
+
+.hero-section {
+    height: 100vh;
+    width: 100vw;
+    background: url('assets/hero.png') no-repeat center center/cover; /* Imagen por defecto (claro) */
+    position: relative;
+    overflow: hidden;
+    transition: background-image 0.3s ease;
+}
+
+.hero-content {
+    position: absolute;
+    top: 15%;
+    right: 50px;
+    text-align: right;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.tagline-small {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+.tagline-large {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 0.9;
+}
+
+@media (max-width: 768px) {
+    .tagline-large {
+        font-size: 2.5rem;
+    }
+    
+    .tagline-small {
+        font-size: 1rem;
+    }
+    
+    .hero-content {
+        top: 10%;
+        right: 20px;
+    }
+}
+
+
+/* -------------------------------------- */
+/* 3. FOOTER */
+/* -------------------------------------- */
+
+.main-footer {
+    background-color: white;
+    color: black;
+    padding: 50px 50px 20px 50px;
+    border-top: 1px solid #eee;
+    transition: background-color 0.3s ease, color 0.3s ease, border-top-color 0.3s ease;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr; 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+.footer-col h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333; 
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li, .footer-col p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    text-decoration: underline;
+}
+
+.logo-col h3 {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    transition: color 0.3s ease;
+}
+
+.logo-col p {
+    font-size: 0.85rem;
+    color: #777;
+    transition: color 0.3s ease;
+}
+
+.footer-logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.contact-col h4 {
+    margin-bottom: 42px;
+}
+
+.theme-switcher-wrapper {
+    display: flex;
+    flex-direction: column; /* Columna para el interruptor y el copyright */
+    align-items: flex-start; /* Alinear a la izquierda */
+    gap: 20px; /* Espacio entre el interruptor y el copyright */
+    padding-top: 20px;
+    border-top: 1px solid #eee; /* Separador */
+    margin-top: 20px;
+    transition: border-top-color 0.3s ease;
+}
+
+.footer-bottom {
+    text-align: left;
+}
+
+.footer-bottom p {
+    font-size: 0.75rem;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+/* -------------------------------------- */
+/* RESPONSIVE FOOTER */
+/* -------------------------------------- */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 15px 20px;
+    }
+    
+    .nav-menu {
+        display: none; 
+    }
+    
+    .main-header .logo {
+        display: block;
+        font-weight: 700;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr; 
+        gap: 40px;
+    }
+    
+    .footer-col {
+        padding-bottom: 15px; 
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .footer-col:last-child {
+        border-bottom: none;
+    }
+    
+    .theme-switcher-wrapper {
+        align-items: center; /* Centrar en móvil */
+    }
+
+    .footer-bottom {
+        text-align: center;
+    }
+}
+
+/* -------------------------------------- */
+/* DARK MODE SWITCH */
+/* -------------------------------------- */
+
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    position: relative;
+    display: block;
+    width: 60px; /* Ancho del interruptor */
+    height: 30px; /* Alto del interruptor */
+    background-color: #ccc; /* Color de fondo del interruptor apagado */
+    border-radius: 15px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-inner {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: #4CAF50; /* Color de fondo del interruptor encendido */
+    transform: scaleX(0); /* Escondido por defecto */
+    transition: transform 0.3s ease;
+}
+
+.toggle-switch {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 26px; /* Tamaño del círculo del interruptor */
+    height: 26px;
+    background-color: #fff; /* Color del círculo */
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* Cuando el checkbox está checked, mover el interruptor */
+.toggle-checkbox:checked + .toggle-label .toggle-inner {
+    transform: scaleX(1);
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-switch {
+    transform: translateX(30px); /* Mover a la derecha */
+}
+
+/* -------------------------------------- */
+/* DARK MODE STYLES */
+/* -------------------------------------- */
+
+body.dark-mode {
+    background-color: #1a1a1a; /* Casi negro */
+    color: white;
+}
+
+body.dark-mode .main-header {
+    color: #eee;
+}
+
+body.dark-mode .main-footer {
+    background-color: #2a2a2a; /* Otro tono de casi negro para el footer */
+    color: #eee;
+    border-top-color: #444;
+}
+
+body.dark-mode .footer-col h4 {
+    color: #eee;
+}
+
+body.dark-mode .footer-col ul li,
+body.dark-mode .footer-col p {
+    color: #bbb;
+}
+
+body.dark-mode .logo-col h3 {
+    color: #eee;
+}
+
+body.dark-mode .logo-col p {
+    color: #ccc;
+}
+
+body.dark-mode .theme-switcher-wrapper {
+    border-top-color: #444;
+}
+
+body.dark-mode .footer-bottom p {
+    color: #aaa;
+}
+
+body.dark-mode .hero-section {
+    background: url('assets/dark_hero.png') no-repeat center center/cover; /* Imagen de fondo para modo oscuro */
+}
+
+/* Ajustes para el logo de la cabecera en modo oscuro si no tiene el mismo color que el resto de letras */
+body.dark-mode .main-header .logo {
+    /* Si tu logo es una imagen, asegúrate de que contraste */
+    /* Si es texto y quieres un color diferente: */
+    /* color: #f0f0f0; */
+}

@@ -1,8 +1,8 @@
 # Enunciados
 
-## Ejercicio 1: La Base - El Objeto Tarea Documentado
+[![back](../../assets/icons/back.svg)](README.md)
 
-[![back](/../../assets/icons/back.svg)](README.md#ejercicio-1)
+## Ejercicio 1: La Base - El Objeto Tarea Documentado
 
 Este primer ejercicio se centra en la creación, uso y documentación de un objeto simple.
 
@@ -12,13 +12,13 @@ Este primer ejercicio se centra en la creación, uso y documentación de un obje
 
 - Crea una clase llamada `Tarea` en un archivo `Tarea.js`.
 - El constructor debe recibir el texto de la tarea y establecer las siguientes propiedades:
-  - `id`: Un identificador único (puedes usar `Date.now()` o un paquete como `uuid`).
-  - `texto`: El texto recibido como parámetro.
-  - `completada`: Booleano, por defecto `false`.
-  - `fechaCreacion`: La fecha actual en la que se crea la tarea.
+  - `id`: Un identificador único (puedes usar `Date.now()` o un paquete como `uuid`).
+  - `texto`: El texto recibido como parámetro.
+  - `completada`: Booleano, por defecto `false`.
+  - `fechaCreacion`: La fecha actual en la que se crea la tarea.
 - Añade los siguientes métodos:
-  - `completar()`: Cambia `completada` a `true`.
-  - `toString()`: Devuelve un string representando la tarea, ej. "[ ] Comprar el pan" o "[x] Comprar el pan" si está completada.
+  - `completar()`: Cambia `completada` a `true`.
+  - `toString()`: Devuelve un string representando la tarea, ej. "[ ] Comprar el pan" o "[x] Comprar el pan" si está completada.
 - Documenta la clase exhaustivamente con JSDoc.
 
 En `app.js`, importa la clase `Tarea`, crea un par de instancias y utiliza sus métodos mostrando los resultados por consola.
@@ -29,11 +29,10 @@ En `app.js`, importa la clase `Tarea`, crea un par de instancias y utiliza sus m
 - (h): En `app.js` se crean y usan objetos `Tarea`.
 - (i, k): Documentación completa con JSDoc.
 
----
+
+[![back](../../assets/icons/back_mini.svg)](README.md#ejercicio-1-la-base---el-objeto-tarea-documentado)
 
 ## Ejercicio 2: El Gestor Central - TaskManager (Patrón Singleton)
-
-[![back](../../assets/icons/back.svg)](README.md#ejercicio-2)
 
 Aquí introducimos el patrón Singleton para gestionar un estado único y compartido.
 
@@ -45,10 +44,10 @@ Aquí introducimos el patrón Singleton para gestionar un estado único y compar
 - Implementa Singleton con un método estático `getInstance()`.
 - Añade propiedad `tareas` (array de instancias de `Tarea`).
 - Métodos:
-  - `agregarTarea(texto)`: Crea y añade una tarea.
-  - `eliminarTarea(id)`: Busca y elimina una tarea por `id`.
-  - `obtenerTareas()`: Devuelve el array de tareas.
-  - `marcarTareaComoCompletada(id)`: Busca la tarea y llama a `completar()`.
+  - `agregarTarea(texto)`: Crea y añade una tarea.
+  - `eliminarTarea(id)`: Busca y elimina una tarea por `id`.
+  - `obtenerTareas()`: Devuelve el array de tareas.
+  - `marcarTareaComoCompletada(id)`: Busca la tarea y llama a `completar()`.
 - Documenta toda la clase con JSDoc.
 
 En `app.js`, obtén la instancia de `TaskManager` y úsala para añadir, listar y eliminar tareas, comprobando que siempre sea la misma instancia.
@@ -59,9 +58,8 @@ En `app.js`, obtén la instancia de `TaskManager` y úsala para añadir, listar 
 - (f, g, h): Estructura de `TaskManager` y gestión de objetos `Tarea`.
 - (i, k): Documentación completa.
 
----
 
-[![back](../../assets/icons/back.svg)](README.md#ejercicio-3)
+[![back](../../assets/icons/back_mini.svg)](README.md#ejercicio-2-el-gestor-central---taskmanager-patrón-singleton)
 
 ## Ejercicio 3: Notificación de Cambios - TaskManager Mejorado (Patrón Observer)
 
@@ -74,12 +72,12 @@ Simula la reactividad de aplicaciones modernas.
 - Modifica `TaskManager` para actuar como Sujeto.
 - Añade `observadores` (array de funciones).
 - Métodos:
-  - `suscribir(observador)`: Añade función al array.
-  - `notificar()`: Ejecuta todas las funciones del array.
+  - `suscribir(observador)`: Añade función al array.
+  - `notificar()`: Ejecuta todas las funciones del array.
 - Modifica `agregarTarea`, `eliminarTarea` y `marcarTareaComoCompletada` para llamar a `this.notificar()` después de cambiar el array.
 - En `app.js`, crea funciones observadoras:
-  - `actualizarListaConsola()`: Muestra todas las tareas por consola.
-  - `mostrarContador()`: Muestra el número total de tareas.
+  - `actualizarListaConsola()`: Muestra todas las tareas por consola.
+  - `mostrarContador()`: Muestra el número total de tareas.
 - Suscribe ambas funciones al `TaskManager` y comprueba su ejecución automática.
 
 **Foco en Criterios:**
@@ -90,9 +88,8 @@ Simula la reactividad de aplicaciones modernas.
 
 **Ampliación (para nota):** Crear un observador que actualice un `<ul>` en HTML manipulando el DOM.
 
----
 
-[![back](../../assets/icons/back.svg)](README.md#ejercicio-4)
+[![back](../../assets/icons/back_mini.svg)](README.md#ejercicio-3-notificación-de-cambios---taskmanager-mejorado-patrón-observer)
 
 ## Ejercicio 4: Creación Flexible - ElementoUIFactory (Patrón Factory)
 
@@ -104,8 +101,8 @@ Desacopla la creación de objetos complejos.
 
 - Crea clase `ElementoUIFactory`.
 - Método `crearElementoTarea(tarea, tipo)`:
-  - `tipo = 'simple'`: Devuelve `<li>` con solo el texto de la tarea.
-  - `tipo = 'detallado'`: Devuelve `<div>` con texto, fecha de creación y checkbox.
+  - `tipo = 'simple'`: Devuelve `<li>` con solo el texto de la tarea.
+  - `tipo = 'detallado'`: Devuelve `<div>` con texto, fecha de creación y checkbox.
 - Documenta la fábrica.
 
 En `app.js`, usa la fábrica para generar elementos del DOM y añadirlos a la página web. No usar `document.createElement` directamente.
@@ -116,4 +113,5 @@ En `app.js`, usa la fábrica para generar elementos del DOM y añadirlos a la p�
 - (h): Código principal usa la fábrica para crear elementos.
 - (i, k): Documentación de la lógica de la fábrica.
 
----
+
+[![back](../../assets/icons/back_mini.svg)](README.md#ejercicio-4-creación-flexible---elementouifactory-patrón-factory)

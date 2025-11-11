@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Alberto Estepa Gómez</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Incluye html2pdf.js para la funcionalidad de descarga de PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="portfolio-container" id="portfolio-resume">
+        <header class="portfolio-header">
+            <div class="profile-section">
+                <img id="profile-pic" src="img/placeholder.jpg" alt="Foto de Perfil">
+                <input type="file" id="upload-pic" accept="image/*" style="display: none;">
+                <label for="upload-pic" class="upload-btn">Subir Foto</label>
+            </div>
+            <h1>Alberto Estepa Gómez</h1>
+            <p class="subtitle">Desarrollador Web Creativo | Bellas Artes & Tecnología</p>
+        </header>
+
+        <main class="portfolio-content">
+            <section class="about-me">
+                <h2><i class="fas fa-user-circle icon"></i> Sobre Mí</h2>
+                <div class="about-me-content-wrapper">
+                    <div class="main-bio">
+                        <p>Desarrollador de aplicaciones web con grado en Bellas Artes por la universidad de Sevilla y experiencia en hostelería. Combino habilidades técnicas en Java, HTML, CSS, SQL y diseño web con una sólida base creativa en diseño gráfico, fotografía y vídeo. He trabajado en eventos de alto nivel como camarero, ofreciendo un servicio profesional, multilingüe y de calidad. Cuento con carné de conducir tipo B, nivel C1 de inglés y certificado de manipulación de alimentos. Persona resolutiva, adaptable y con fuerte orientación al trabajo en equipo.</p>
+                        <p><strong>Disponibilidad de traslado:</strong> cualquier parte</p>
+                    </div>
+                    <div class="personal-details">
+                        <h3>Datos personales</h3>
+                        <ul>
+                            <li><strong>Actualmente trabajando:</strong> Sí</li>
+                            <li><strong>Carnet de conducir:</strong> B</li>
+                            <li><strong>Permiso para trabajar en:</strong> España</li>
+                            <li><strong>Dispuesto a viajar:</strong> Depende de la oportunidad</li>
+                            <li><strong>Fecha de nacimiento:</strong> 05/06/2000</li>
+                            <li><strong>Nivel más alto de educación:</strong> Licenciatura/Grado</li>
+                            <li><strong>Tipo de Industria:</strong> Arte y cultura, Atención al cliente, Desarrollo de software, Soporte informático, Tecnología</li>
+                            <li><strong>Años de experiencia:</strong> 1 año</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="experience">
+                <h2><i class="fas fa-briefcase icon"></i> Experiencia Laboral</h2>
+                <ul>
+                    <li>
+                        <h3>Camarero de barra y sala <span class="company">OY Sevilla</span></h3>
+                        <p class="dates">septiembre 2024 - Actualmente</p>
+                        <p>Camarero de catering en OY Sevilla, especializado en eventos de alto nivel como bodas, congresos y celebraciones. Me encargo del servicio de bebidas y del menú con atención al detalle, asegurando una experiencia elegante y cuidada para cada invitado. Trabajo en equipo para mantener el ritmo y la coordinación del servicio, siempre con actitud profesional, discreta y orientada al cliente.</p>
+                    </li>
+                    <li>
+                        <h3>Desarrollador Web Full Stack <span class="company">Ennnde 3d</span></h3>
+                        <p class="dates">mayo 2025 - junio 2025</p>
+                        <p>Este proyecto consistió en la realización de una pagina web que permitiese visualizar archivos 3d (.gltf, .glb y .stl) en un entorno atractivo y cercano. La funcionalidad mas interesante del visor es la de poder comparar varios archivos para ofrecer una facil identificación de diferencias de mallas en dos escaneados 3d de un mismo objeto que permita encontrar daños sufridos por el producto escaneado. Esto lo realizamos con la librería Three.js para JavaScript, html y css. El trabajo abarcó desde el diseño de las diferentes páginas, los visores y el aplicado de logica para poder reescalar modelos, rotarlos, y aplicar diferentes elementos esteticos como hdri, texturas o propiedades de los materiales.</p>
+                    </li>
+                    <li>
+                        <h3>Camarero de barra y sala <span class="company">Casa Robles</span></h3>
+                        <p class="dates">abril 2025 - abril 2025</p>
+                        <p>Camarero de catering en Casa Robles durante la Final de la Copa del Rey 2025 en el Estadio de La Cartuja. Formé parte del equipo encargado del servicio en el palco de honor Esfera, atendiendo a personalidades destacadas con máxima discreción, precisión y elegancia. Ofrecí un servicio impecable de bebidas y gastronomía, cuidando cada detalle y manteniendo siempre una actitud profesional y cordial en un entorno de alto nivel.</p>
+                    </li>
+                    <li>
+                        <h3>Camarero de barra y sala <span class="company">La Carbonería</span></h3>
+                        <p class="dates">enero 2025 - abril 2025</p>
+                        <p>Camarero de barra en La Carbonería, emblemático bar de Sevilla con clientela internacional. Atendía en barra sirviendo bebidas con agilidad y precisión, ofreciendo un trato cercano y profesional. El dominio del inglés y nociones de italiano me permitían comunicarme eficazmente con turistas y visitantes, garantizando un servicio personalizado y de calidad en un entorno dinámico y multicultural.</p>
+                    </li>
+                    <li>
+                        <h3>Editor de video <span class="company">Proyecto independiente / Freelance</span></h3>
+                        <p class="dates">abril 2024 - mayo 2024</p>
+                        <p>Realicé la edición de un videoclip musical para un artista independiente, utilizando Adobe Premiere Pro. Me encargué de la edición completa del material audiovisual, corrección de color, sincronización con el audio y montaje narrativo. El proyecto se llevó a cabo de manera autónoma, cumpliendo con los plazos establecidos y adaptándome a la visión artística del cliente.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="education">
+                <h2><i class="fas fa-graduation-cap icon"></i> Educación</h2>
+                <ul>
+                    <li>
+                        <h3>Informática (FP Grado Superior) <span class="institution">Centro privado Ilerna</span></h3>
+                        <p class="dates">septiembre 2024 - Actualmente</p>
+                        <p class="location">Sevilla, Sevilla provincia</p>
+                    </li>
+                    <li>
+                        <h3>Bellas artes (Grado) <span class="institution">Universidad de Sevilla</span></h3>
+                        <p class="dates">septiembre 2018 - mayo 2024</p>
+                        <p class="location">Sevilla, Sevilla provincia</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="skills">
+                <h2><i class="fas fa-code icon"></i> Habilidades</h2>
+                <div class="skills-grid">
+                    <span>HTML</span>
+                    <span>Programación orientada a objetos</span>
+                    <span>Composición visual y diseño creativo</span>
+                    <span>Informática</span>
+                    <span>JavaScript</span>
+                    <span>CSS</span>
+                    <span>Manipulación de alimentos</span>
+                    <span>Desarrollo web</span>
+                    <span>Edición de vídeo</span>
+                    <span>Desarrollo de aplicaciones</span>
+                    <span>Premiere Pro</span>
+                    <span>Adobe Photoshop</span>
+                    <span>Experiencia en restaurante</span>
+                    <span>Fotografía y edición de imagen</span>
+                    <span>Inglés</span>
+                    <span>Diseño gráfico</span>
+                    <span>Servicio de comida</span>
+                    <span>Gestión de bases de datos</span>
+                    <span>Java</span>
+                </div>
+            </section>
+
+            <section class="certificates">
+                <h2><i class="fas fa-certificate icon"></i> Certificados y Licencias</h2>
+                <ul>
+                    <li>
+                        <h3>Carnet de Manipulación de alimentos</h3>
+                        <p class="dates">septiembre 2024 - Actualmente</p>
+                        <p>Formación acreditada en seguridad e higiene alimentaria. Conocimientos actualizados sobre prácticas correctas de manipulación, almacenamiento, preparación y conservación de alimentos, siguiendo la normativa sanitaria vigente. Capacitado para trabajar en entornos donde se requiera el cumplimiento de estándares de calidad y seguridad alimentaria.</p>
+                    </li>
+                    <li>
+                        <h3>Cambridge C1 Advanced</h3>
+                        <p class="dates">junio 2018 - Actualmente</p>
+                        <p>Dominio avanzado de inglés, acreditado por el examen Cambridge C1 Advanced.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="contact">
+                <h2><i class="fas fa-envelope icon"></i> Contacto</h2>
+                <p><i class="fas fa-map-marker-alt"></i> Sevilla, España</p>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:alberto16166@alumnos.ilerna.com">alberto16166@alumnos.ilerna.com</a></p>
+                <p><i class="fas fa-phone"></i> Teléfono: <a href="tel:+34644208608">+34644208608</a></p>
+                <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/albertoestepagomez" target="_blank">linkedin.com/in/albertoestepagomez</a></p>
+                <p><i class="fas fa-globe"></i> Portfolio: <a href="https://tuportfolio.com" target="_blank">tuportfolio.com</a></p>
+            </section>
+        </main>
+
+        <footer class="portfolio-footer">
+            <button id="download-pdf-btn">Descargar Portfolio como PDF</button>
+            <p>&copy; 2023 Alberto Estepa Gómez. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

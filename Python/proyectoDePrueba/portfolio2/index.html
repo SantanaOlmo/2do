@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Alberto Estepa Gómez</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="profile-photo-container">
+            <img src="img/placeholder.jpg" alt="Foto de perfil de Alberto Estepa" id="profile-photo">
+            <!-- Para subir una foto, reemplaza 'img/placeholder.jpg' con la ruta de tu imagen.
+                 Si deseas una funcionalidad interactiva para subir, se requiere JavaScript. -->
+            <label for="file-upload" class="upload-btn">Subir Foto</label>
+            <input type="file" id="file-upload" accept="image/*" style="display: none;">
+        </div>
+        <div class="header-info">
+            <h1>Alberto Estepa Gómez</h1>
+            <p>Desarrollador de aplicaciones web</p>
+            <div class="contact-info">
+                <span>📍 Sevilla, Sevilla provincia 41020</span> |
+                <span>✉️ alberto16166@alumnos.ilerna.com</span> |
+                <span>📞 +34644208608</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="profile-summary section-card">
+            <h2>Sobre mí</h2>
+            <p>Desarrollador de aplicaciones web con grado en Bellas Artes por la universidad de Sevilla y experiencia
+            en hostelería. Combino habilidades técnicas en Java, HTML, CSS, SQL y diseño web con una sólida base
+            creativa en diseño gráfico, fotografía y vídeo. He trabajado en eventos de alto nivel como camarero,
+            ofreciendo un servicio profesional, multilingüe y de calidad. Cuento con carné de conducir tipo B, nivel
+            C1 de inglés y certificado de manipulación de alimentos. Persona resolutiva, adaptable y con fuerte
+            orientación al trabajo en equipo.</p>
+        </section>
+
+        <section class="personal-data section-card">
+            <h2>Datos personales</h2>
+            <ul>
+                <li><strong>Actualmente trabajando:</strong> Sí</li>
+                <li><strong>Carnet de conducir:</strong> B</li>
+                <li><strong>Con permiso para trabajar en:</strong> España</li>
+                <li><strong>Dispuesto a viajar:</strong> Depende de la oportunidad</li>
+                <li><strong>Fecha de nacimiento:</strong> 2000-06-05</li>
+                <li><strong>Nivel más alto de educación:</strong> Licenciatura/Grado</li>
+                <li><strong>Tipo de Industria:</strong> Arte y cultura, Atención al cliente, Desarrollo de software, Soporte informático,
+Tecnología</li>
+                <li><strong>Años de experiencia:</strong> 1</li>
+                <li><strong>Dispuesto a trasladarse a:</strong> cualquier parte</li>
+            </ul>
+        </section>
+
+        <section class="experience section-card">
+            <h2>Experiencia laboral</h2>
+            <div class="job-entry">
+                <h3>Camarero de barra y sala</h3>
+                <p class="company-location">OY Sevilla-Sevilla, Sevilla provincia</p>
+                <p class="dates">septiembre 2024 - Actualmente</p>
+                <p>Camarero de catering en OY Sevilla, especializado en eventos de alto nivel como bodas, congresos
+                y celebraciones. Me encargo del servicio de bebidas y del menú con atención al detalle, asegurando
+                una experiencia elegante y cuidada para cada invitado. Trabajo en equipo para mantener el ritmo y la
+                coordinación del servicio, siempre con actitud profesional, discreta y orientada al cliente.</p>
+            </div>
+            <div class="job-entry">
+                <h3>Desarrollador Web Full Stack</h3>
+                <p class="company-location">Ennnde 3d-Sevilla, Sevilla provincia</p>
+                <p class="dates">mayo 2025 - junio 2025</p>
+                <p>Este proyecto consistió en la realización de una pagina web que permitiese visualizar archivos 3d
+                (.gltf, .glb y .stl) en un entorno atractivo y cercano. La funcionalidad mas interesante del visor es la
+                de poder comparar varios archivos para ofrecer una facil identificación de diferencias de mallas en dos
+                escaneados 3d de un mismo objeto que permita encontrar daños sufridos por el producto escaneado.
+                Esto lo realizamos con la librería Three.js para JavaScript, html y css. El trabajo abarcó desde el diseño
+                de las diferentes páginas, los visores y el aplicado de logica para poder reescalar modelos, rotarlos, y
+                aplicar diferentes elementos esteticos como hdri, texturas o propiedades de los materiales.</p>
+            </div>
+            <div class="job-entry">
+                <h3>Camarero de barra y sala</h3>
+                <p class="company-location">Casa Robles-Sevilla, Sevilla provincia</p>
+                <p class="dates">abril 2025 - abril 2025</p>
+                <p>Camarero de catering en Casa Robles durante la Final de la Copa del Rey 2025 en el Estadio de La Cartuja.
+                Formé parte del equipo encargado del servicio en el palco de honor Esfera, atendiendo a personalidades
+                destacadas con máxima discreción, precisión y elegancia. Ofrecí un servicio impecable de bebidas y
+                gastronomía, cuidando cada detalle y manteniendo siempre una actitud profesional y cordial en un
+                entorno de alto nivel.</p>
+            </div>
+            <div class="job-entry">
+                <h3>Camarero de barra y sala</h3>
+                <p class="company-location">La Carbonería-Sevilla, Sevilla provincia</p>
+                <p class="dates">enero 2025 - abril 2025</p>
+                <p>Camarero de barra en La Carbonería, emblemático bar de Sevilla con clientela internacional. Atendía en
+                barra sirviendo bebidas con agilidad y precisión, ofreciendo un trato cercano y profesional. El dominio
+                del inglés y nociones de italiano me permitían comunicarse eficazmente con turistas y visitantes,
+                garantizando un servicio personalizado y de calidad en un entorno dinámico y multicultural.</p>
+            </div>
+            <div class="job-entry">
+                <h3>Editor de video</h3>
+                <p class="company-location">Proyecto independiente / Freelance-Sevilla, Sevilla provincia</p>
+                <p class="dates">abril 2024 - mayo 2024</p>
+                <p>Realicé la edición de un videoclip musical para un artista independiente, utilizando Adobe Premiere Pro.
+                Me encargué de la edición completa del material audiovisual, corrección de color, sincronización con el
+                audio y montaje narrativo. El proyecto se llevó a cabo de manera autónoma, cumpliendo con los plazos
+                establecidos y adaptándome a la visión artística del cliente.</p>
+            </div>
+        </section>
+
+        <section class="education section-card">
+            <h2>Educación y formación</h2>
+            <div class="education-entry">
+                <h3>Informática (FP Grado Superior)</h3>
+                <p class="institution-location">Centro privado Ilerna-Sevilla, Sevilla provincia</p>
+                <p class="dates">septiembre 2024 - Actualmente</p>
+            </div>
+            <div class="education-entry">
+                <h3>Bellas artes (Grado)</h3>
+                <p class="institution-location">Universidad de Sevilla-Sevilla, Sevilla provincia</p>
+                <p class="dates">septiembre 2018 - mayo 2024</p>
+            </div>
+        </section>
+
+        <section class="skills-languages section-card">
+            <h2>Aptitudes, conocimientos e idiomas</h2>
+            <ul class="skills-list">
+                <li>HTML</li>
+                <li>Programación orientada a objetos</li>
+                <li>Composición visual y diseño creativo</li>
+                <li>Informatica</li>
+                <li>JavaScript</li>
+                <li>CSS</li>
+                <li>Manipulación de alimentos (1 año)</li>
+                <li>Desarrollo web</li>
+                <li>Edición de vídeo</li>
+                <li>Desarrollo de aplicaciones</li>
+                <li>Premiere Pro</li>
+                <li>Adobe Photoshop</li>
+                <li>Experiencia en restaurante</li>
+                <li>fotografía y edición de imagen</li>
+                <li>Inglés</li>
+                <li>Diseño gráfico</li>
+                <li>Servicio de comida</li>
+                <li>Gestión de bases de datos</li>
+                <li>Java</li>
+            </ul>
+        </section>
+
+        <section class="certificates section-card">
+            <h2>Certificados y licencias</h2>
+            <div class="certificate-entry">
+                <h3>Carnet de Manipulación de alimentos</h3>
+                <p class="dates">septiembre 2024 - Actualmente</p>
+                <p>Formación acreditada en seguridad e higiene alimentaria. Conocimientos actualizados sobre prácticas
+                correctas de manipulación, almacenamiento, preparación y conservación de alimentos, siguiendo la
+                normativa sanitaria vigente. Capacitado para trabajar en entornos donde se requiera el cumplimiento
+                de estándares de calidad y seguridad alimentaria.</p>
+            </div>
+            <div class="certificate-entry">
+                <h3>Cambridge C1 Advanced</h3>
+                <p class="dates">junio 2018 - Actualmente</p>
+                <p>Dominio avanzado del idioma inglés, certificado por Cambridge Assessment English. Capacitado para
+                comunicarse eficazmente en situaciones complejas, tanto académicas como profesionales.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Alberto Estepa Gómez. Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKO Sequencer - ¡Crea tu ritmo!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎵</text></svg>">
+</head>
+<body>
+    <div class="sequencer-container">
+        <h1><span class="emoji">🎶</span> POKO Sequencer <span class="emoji">🥁</span></h1>
+        <p class="subtitle">¡Dale vida a tus ideas musicales con este secuenciador inspirado en la diversión!</p>
+
+        <!-- Aquí irá la interfaz del secuenciador -->
+        <div id="sequencer-grid"></div>
+
+        <div class="controls">
+            <button id="play-pause-btn">▶️ Play</button>
+            <button id="clear-btn">🗑️ Borrar</button>
+            <label for="bpm-slider">BPM:</label>
+            <input type="range" id="bpm-slider" min="60" max="200" value="120">
+            <span id="bpm-display">120</span>
+        </div>
+
+        <div class="keyboard-info upload-info">
+            <p class="subtitle">🎮 **Controles del Teclado:**</p>
+            <ul>
+                <li><kbd>Espacio</kbd>: Play/Pause</li>
+                <li><kbd>C</kbd>: Borrar Patrón</li>
+                <li><kbd>↑</kbd>/<kbd>↓</kbd>: Cambiar BPM</li>
+                <li><kbd>Tab</kbd>: Seleccionar Fila de Instrumento</li>
+                <li><kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd>/<kbd>4</kbd>: Activar/Desactivar Paso en Fila Seleccionada</li>
+                <li>**Tocar Sonidos (cuando no está en Play):**</li>
+                <li><kbd>Q</kbd>, <kbd>W</kbd>, <kbd>E</kbd> (Kick: Base, +1, -1)</li>
+                <li><kbd>R</kbd>, <kbd>A</kbd>, <kbd>S</kbd> (Snare: Base, +1, -1)</li>
+                <li><kbd>D</kbd>, <kbd>F</kbd>, <kbd>Z</kbd> (HiHat: Base, +1, -1)</li>
+                <li><kbd>X</kbd>, <kbd>C</kbd>, <kbd>V</kbd> (Clap: Base, +1, -1)</li>
+            </ul>
+        </div>
+
+        <div class="upload-info">
+            <p class="subtitle">¡Arrastra y suelta tus propios sonidos sobre las etiquetas de los instrumentos para personalizarlos! ✨</p>
+            <p class="small-text">Cada sonido cargado creará automáticamente variaciones "pitched up" y "pitched down" para explorar nuevas melodías en tu beat. 🎼</p>
+        </div>
+
+        <div class="generation-section">
+            <h2><span class="emoji">🤖</span> Genera tu propio ritmo <span class="emoji">🎶</span></h2>
+            <p>¿Quieres un sonido fresco al instante? ¡Genera un synth POKO para el instrumento 'Clap' (y sus variaciones)!</p>
+            <button id="generate-synth-btn">✨ Generar Poko Synth ✨</button>
+            <p id="generation-status"></p>
+        </div>
+
+        <div class="extras-section">
+            <h2><span class="emoji">📦</span> Extras de Producción <span class="emoji">🎛️</span></h2>
+            <div class="extras-controls">
+                <button id="save-pattern-btn">💾 Guardar Patrón</button>
+                <button id="load-pattern-btn">📂 Cargar Patrón</button>
+                <button id="randomize-pattern-btn">🎲 Aleatorio</button>
+            </div>
+            <p id="extras-status"></p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700&display=swap');
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(135deg, #6dd5ed, #2193b0); /* Fondo degradado divertido */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    perspective: 1000px; /* Para efectos 3D sutiles */
+}
+
+.sequencer-container {
+    background-color: rgba(0, 0, 0, 0.75); /* Un poco más oscuro */
+    border-radius: 20px; /* Bordes más redondeados */
+    padding: 40px; /* Más padding */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+    text-align: center;
+    max-width: 950px; /* Un poco más ancho */
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5em; /* Ligeramente más pequeño para adaptarse a la fuente */
+    margin-bottom: 15px;
+    color: #ffda79; /* Amarillo vibrante */
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.5); /* Sombra de texto más intensa */
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    margin-bottom: 10px; /* Reducido para dejar espacio */
+    color: #e0e0e0;
+}
+
+.small-text {
+    font-size: 0.85em;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+.emoji {
+    font-size: 1.1em;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+
+/* Estilos básicos para botones y sliders */
+button {
+    background-color: #ff6b6b; /* Rojo POKO */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin: 0 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+button:hover {
+    background-color: #e63946;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 150px;
+    height: 10px; /* Un poco más grueso */
+    background: #555;
+    border-radius: 5px;
+    outline: none;
+    margin: 0 10px;
+    cursor: grab;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px; /* Un poco más grande */
+    height: 24px;
+    border-radius: 50%;
+    background: #7bdff2; /* Azul claro */
+    border: 2px solid #fff; /* Borde blanco para resaltar */
+    cursor: grab;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #4cc9f0;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.controls {
+    margin-top: 35px; /* Más espacio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Más espacio entre controles */
+}
+
+#bpm-display {
+    min-width: 30px;
+    text-align: left;
+    font-size: 1.2em; /* Ligeramente más grande */
+    color: #ffda79;
+    font-weight: bold;
+}
+
+/* Estilos del secuenciador (Grid 4x4) */
+#sequencer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(4, 1fr); /* Columna de nombre más ancha */
+    gap: 8px; /* Más espacio entre celdas */
+    margin: 40px auto; /* Más margen */
+    max-width: 600px; /* Ajusta el ancho para acomodar los nombres de variaciones */
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo de grid más claro */
+    border-radius: 12px; /* Más redondeado */
+    padding: 12px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Estilos para las etiquetas de los instrumentos/variaciones */
+.instrument-label {
+    background-color: #4a4a4a; /* Color base más oscuro */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.85em; /* Ligeramente más pequeña */
+    padding: 8px 10px; /* Más padding */
+    cursor: grab;
+    transition: all 0.15s ease-out; /* Transición para todas las propiedades */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 50px; /* Asegurar altura consistente */
+}
+
+.instrument-label:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transform: scale(1.01);
+}
+
+.instrument-label.drag-over {
+    border: 3px dashed #ffda79; /* Borde amarillo punteado al arrastrar, más grueso */
+    background-color: rgba(255, 255, 255, 0.3); /* Fondo más claro al arrastrar */
+    transform: scale(1.02);
+    box-shadow: 0 0 15px #ffda79;
+}
+
+.instrument-label.base-label {
+    background-color: #ff6b6b; /* Rojo POKO */
+    color: #fff;
+}
+
+.instrument-label.up-label {
+    background-color: #7bdff2; /* Azul claro POKO */
+    color: #000; /* Texto oscuro para contraste */
+}
+
+.instrument-label.down-label {
+    background-color: #ffda79; /* Amarillo POKO */
+    color: #333;
+}
+
+.instrument-label.selected-row {
+    border: 3px solid #fff; /* Borde blanco más grueso para la fila seleccionada */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.9); /* Sombra más brillante */
+    transform: scale(1.02);
+}
+
+/* Keyframe para el flash general de las etiquetas al tocar directamente */
+@keyframes flash-label-animation {
+    0% { transform: scale(1) translateY(0); filter: brightness(1); box-shadow: none; }
+    50% { transform: scale(1.08) translateY(-3px); filter: brightness(1.6); box-shadow: 0 0 15px rgba(255,255,255,0.7); }
+    100% { transform: scale(1) translateY(0); filter: brightness(1); box-shadow: none; }
+}
+
+.instrument-label.playing {
+    animation: flash-label-animation 0.2s ease-out; /* Animación general de flash y bounce */
+}
+
+/* Animaciones de color específicas para cada tipo de variación, aplicadas junto con la general */
+.instrument-label.playing.base-label {
+    animation: flash-label-animation 0.2s ease-out, flash-base-label-color 0.2s ease-out forwards;
+}
+@keyframes flash-base-label-color {
+    0% { background-color: #fff; color: #000; }
+    50% { background-color: #ffda79; color: #000; }
+    100% { background-color: #ff6b6b; color: #fff; } /* Vuelve al color base */
+}
+
+.instrument-label.playing.up-label {
+    animation: flash-label-animation 0.2s ease-out, flash-up-label-color 0.2s ease-out forwards;
+}
+@keyframes flash-up-label-color {
+    0% { background-color: #fff; color: #000; }
+    50% { background-color: #ffda79; color: #000; }
+    100% { background-color: #7bdff2; color: #000; } /* Vuelve al color up */
+}
+
+.instrument-label.playing.down-label {
+    animation: flash-label-animation 0.2s ease-out, flash-down-label-color 0.2s ease-out forwards;
+}
+@keyframes flash-down-label-color {
+    0% { background-color: #fff; color: #000; }
+    50% { background-color: #ff6b6b; color: #fff; }
+    100% { background-color: #ffda79; color: #333; } /* Vuelve al color down */
+}
+
+
+.step-button {
+    width: 50px; /* Tamaño de los cuadrados */
+    height: 50px;
+    background-color: #555; /* Fondo más oscuro */
+    border: 2px solid #333;
+    border-radius: 10px; /* Más redondeado */
+    cursor: pointer;
+    transition: all 0.15s ease-out; /* Transición para todas las propiedades */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-button.active {
+    background: linear-gradient(45deg, #7bdff2, #4cc9f0); /* Degradado para activo */
+    border-color: #fff; /* Borde blanco para activo */
+    box-shadow: 0 0 10px #4cc9f0, inset 0 0 8px rgba(255,255,255,0.5);
+    transform: scale(1.08) rotate(-1deg); /* Ligero pop y rotación en la activación */
+}
+
+.step-button:hover {
+    border-color: #ffda79; /* Amarillo POKO en hover */
+    transform: scale(1.03);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Animación para la celda actual en reproducción */
+.step-button.current-step {
+    animation: pulse-current-step 0.25s ease-out infinite alternate; /* Animación de pulsación más larga */
+    border-color: #ffda79 !important;
+    box-shadow: 0 0 15px #ffda79, inset 0 0 8px rgba(255,255,255,0.8) !important;
+}
+
+@keyframes pulse-current-step {
+    0% {
+        transform: scale(1.08) rotateY(0deg);
+        box-shadow: 0 0 12px #ffda79, inset 0 0 5px rgba(255,255,255,0.7);
+    }
+    100% {
+        transform: scale(1.15) rotateY(15deg); /* Efecto 3D más dinámico */
+        box-shadow: 0 0 25px #ffda79, inset 0 0 15px rgba(255,255,255,0.9); /* Sombra más intensa */
+        background-color: #ffd700; /* Cambio de color más notorio */
+    }
+}
+
+/* Estilos para las secciones de información */
+.upload-info, .generation-section, .keyboard-info {
+    margin-top: 45px; /* Más espacio */
+    padding: 25px; /* Más padding */
+    background-color: rgba(255, 255, 255, 0.08); /* Un poco más claro */
+    border-radius: 15px;
+    color: #e0e0e0;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+.upload-info .subtitle, .upload-info .small-text {
+    margin-bottom: 8px;
+}
+
+.keyboard-info {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px dashed rgba(255,255,255,0.3);
+}
+
+.keyboard-info ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    text-align: left;
+    max-width: 700px; /* Más ancho para la lista */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.keyboard-info li {
+    background-color: rgba(255, 255, 255, 0.15); /* Fondo más claro para los ítems */
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-size: 0.95em; /* Ligeramente más grande */
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+kbd {
+    background-color: #333; /* Fondo oscuro */
+    border-radius: 5px; /* Más redondeado */
+    padding: 3px 8px; /* Más padding */
+    border: 1px solid #666; /* Borde más suave */
+    color: #fff;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.75em; /* Adapta el tamaño a la fuente pixelada */
+    white-space: nowrap;
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.4);
+}
+
+/* Estilos para la sección de generación de sonido */
+.generation-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.generation-section h2 {
+    color: #ffda79;
+    margin-bottom: 15px;
+}
+
+.generation-section p {
+    color: #e0e0e0;
+    margin-bottom: 15px;
+}
+
+#generate-synth-btn {
+    background-color: #7bdff2; /* Azul POKO */
+    color: #000; /* Texto oscuro para contraste */
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+#generate-synth-btn:hover {
+    background-color: #4cc9f0;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+#generation-status {
+    color: #ffda79;
+    font-style: italic;
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+
+/* Nuevos estilos para la sección de Extras */
+.extras-section {
+    margin-top: 45px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    color: #e0e0e0;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+.extras-section h2 {
+    color: #ffda79;
+    margin-bottom: 15px;
+}
+
+.extras-controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.extras-controls button {
+    background-color: #ffd700; /* Un color distintivo para los extras */
+    color: #333;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.extras-controls button:hover {
+    background-color: #e6c200;
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+#extras-status {
+    color: #7bdff2;
+    font-style: italic;
+    margin-top: 15px;
+    font-size: 0.95em;
+}

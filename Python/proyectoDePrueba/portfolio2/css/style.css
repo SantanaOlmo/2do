@@ -1,0 +1,238 @@
+/* General Styles */
+:root {
+    --primary-blue: #007bff; /* A nice shade of blue */
+    --light-blue: #e6f2ff; /* Very light blue for backgrounds */
+    --dark-blue: #0056b3; /* Darker blue for hover states */
+    --white: #ffffff;
+    --text-color: #333;
+    --secondary-text-color: #555;
+    --border-color: #ddd;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-blue);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+h1, h2, h3 {
+    color: var(--primary-blue);
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+}
+
+h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.3em;
+    color: var(--dark-blue);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Header */
+.header {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: var(--shadow);
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.profile-photo-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--white);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.upload-btn {
+    display: inline-block;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+    background-color: #003d80;
+}
+
+.header-info h1 {
+    color: var(--white);
+}
+
+.header-info p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: var(--light-blue);
+}
+
+.contact-info span {
+    margin: 0 10px;
+    font-size: 0.9em;
+    color: var(--light-blue);
+}
+
+/* Section Cards */
+.section-card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px; /* Ensures spacing between cards even if grid fails */
+}
+
+/* Experience & Education Specifics */
+.job-entry, .education-entry, .certificate-entry {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.job-entry:last-child, .education-entry:last-child, .certificate-entry:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.company-location, .institution-location {
+    font-style: italic;
+    color: var(--secondary-text-color);
+    margin-bottom: 5px;
+}
+
+.dates {
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+    margin-bottom: 10px;
+}
+
+/* Skills list */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skills-list li {
+    background-color: var(--light-blue);
+    color: var(--dark-blue);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    border: 1px solid var(--primary-blue);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        text-align: left;
+        justify-content: center;
+    }
+
+    .profile-photo-container {
+        margin-right: 30px;
+        margin-bottom: 0;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .contact-info span {
+        flex-basis: auto; /* Allow items to take up as much space as needed */
+        margin: 5px 10px; /* Adjust margin for better spacing */
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+    }
+
+    /* Adjust specific sections to span full width if needed */
+    .profile-summary, .experience {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr); /* Three columns on very large screens */
+    }
+    .profile-summary {
+        grid-column: span 3;
+    }
+    .experience {
+        grid-column: span 2;
+    }
+    .education {
+        grid-column: span 1;
+    }
+    .skills-languages, .certificates {
+        grid-column: span 1;
+    }
+    /* Re-evaluate if any section should span more dynamically */
+}

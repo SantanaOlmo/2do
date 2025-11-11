@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <title>Página con fallo</title>
+
+
+
+  <style>
+
+    body { font-family: Arial, sans-serif; background-color: #fff; color: #333; }
+
+    h1 { text-align: center; margin-top: 60px; }
+
+    p { max-width: 600px; margin: 20px auto; line-height: 1.5; }
+
+  </style>
+
+
+
+  <!-- Esta página tiene un error muy obvio-->
+
+</head>
+
+<body>
+
+  <h1 id="titulo">¡Hola, estudiantes!</h1>
+
+  <p id="texto">Esta es una página de ejemplo. Si la veis en blanco, usad el Inspector para encontrar el fallo.</p>
+
+
+
+  <button id="boton">Púlsame</button>
+
+
+
+  <script>
+	    document.getElementById('boton').addEventListener('click', function() {
+
+      alert('¡Botón pulsado!');
+
+	document.getElementById('titulo').style.color="red";
+	document.getElementById('texto').textContent='nuevoTExto';
+
+    });
+
+  </script>
+
+</body>
+
+</html>

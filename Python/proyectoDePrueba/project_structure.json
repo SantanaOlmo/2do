@@ -1,0 +1,31 @@
+{
+  "poko_sequencer": {
+    "css": {
+      "style.css": "file"
+    },
+    "index.html": "file",
+    "js": {
+      "script.js": "file"
+    }
+  },
+  "portfolio.txt": "file",
+  "portfolio2": {
+    "css": {
+      "style.css": "file"
+    },
+    "img": {
+      "placeholder.jpg": "file"
+    },
+    "index.html": "file",
+    "js": {
+      "script.js": "file"
+    }
+  },
+  "portfolio3": {
+    "img": {},
+    "index.html": "file",
+    "script.js": "file",
+    "style.css": "file"
+  },
+  "prompt1.txt": "file"
+}

@@ -1,0 +1,35 @@
+Crea un proyecto web tipo secuenciador musical inspirado en POKO. 
+
+Características principales:
+
+1. Matriz 4x4:
+   - Cada celda representa un sonido.
+   - Al pulsar "play", se reproducen los sonidos activos en cada posición.
+
+2. Subida de sonidos:
+   - Permitir subir hasta 4 sonidos mediante drag-and-drop.
+   - Los sonidos subidos se muestran a la izquierda del secuenciador.
+
+3. Generación automática de sonidos:
+   - Por cada sonido subido, crear variaciones "pitched up" y "pitched down".
+   - Las variaciones se asignan automáticamente a celdas de la matriz.
+
+4. Control por teclado:
+   - Permitir reproducir los sonidos asignados mediante las teclas:
+     1,2,3,4,q,w,e,r,a,s,d,f,z,x,c,v
+
+5. Interfaz:
+   - Atractiva y divertida, profesional.
+   - Animaciones visuales que indiquen qué celda se está reproduciendo.
+   - Opcional: añadir efectos visuales o de transición para que sea más entretenido tocarlo.
+
+6. Extras:
+   - Que la matriz se genere dinámicamente según los sonidos subidos.
+   - Opciones de play/stop, loop y ajuste de volumen por sonido.
+   - Todo el proyecto debe estar listo para ejecutarse en un navegador moderno (HTML, CSS, JS, React opcional).
+
+Genera **toda la estructura del proyecto**: archivos, carpetas y contenido inicial (HTML, CSS, JS). Devuelve las instrucciones como **JSON válido** siguiendo el esquema:
+- Cada acción debe incluir `"action"`, `"ruta"`, `"type"` (`file` o `directory`) y opcionalmente `"contenido"` o `"mensaje"`.
+- Permite acciones: `"crear"`, `"escribir"`, `"leer"`, `"borrar"`, `"hablar"`.
+
+Hazlo divertido, interactivo y profesional.

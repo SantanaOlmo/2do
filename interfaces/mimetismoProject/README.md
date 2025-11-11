@@ -15,7 +15,7 @@ Este proyecto es una plantilla web moderna y responsive, diseñada con un enfoqu
 
 ## Estructura del Proyecto
 
-El proyecto sigue una estructura de archivos clara y funcional:
+Estructura del proyecto:
 ````
 ├── assets/                       
 ├── styles/                       

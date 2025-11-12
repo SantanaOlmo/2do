@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Convertidor CSV a Playlist MD</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        #output-container { margin-top: 20px; border: 1px solid #ccc; padding: 15px; background-color: #f9f9f9; }
+        pre { white-space: pre-wrap; word-break: break-all; }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+        #downloadBtn {
+            margin-top: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #downloadBtn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Cargar Archivo CSV de Spotify</h2>
+    <p>Selecciona tu archivo CSV exportado de Spotify (debe contener la cabecera original).</p>
+    <input type="file" id="csvFile" accept=".csv">
+
+    <hr>
+    
+    <h3>Resultado Markdown:</h3>
+    <p id="status-message">Aún no se ha cargado ningún archivo.</p>
+    
+    <button id="downloadBtn" style="display:none;">Descargar playlist.md</button>
+
+    <div id="output-container">
+        <pre id="markdownOutput"></pre>
+    </div>
+
+    <script src="toMD.js"></script>
+
+</body>
+</html>

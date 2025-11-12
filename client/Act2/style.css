@@ -1,0 +1,58 @@
+/*
+ * Archivo style.css
+ * Estilos básicos para la aplicación To-Do List, complementando Tailwind.
+ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f7fafc; /* gray-50 */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilo para el input de tipo checkbox (mejor aspecto) */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #3b82f6; /* blue-500 */
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #10b981; /* green-500 */
+    border-color: #10b981;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Estilo para el botón de añadir */
+button[type="submit"] {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+button[type="submit"]:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo para el botón de eliminar (SVG) */
+.text-red-500 svg {
+    pointer-events: none; /* Asegura que el clic va al botón */
+}

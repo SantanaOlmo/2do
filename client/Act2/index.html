@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act2 - Patrones de Tareas</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="">
+    <script type="module" src="app.js" defer></script>
+    <!-- Configuración para usar la fuente Inter y Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans p-4">
+    <div class="max-w-xl mx-auto mt-8 bg-white p-6 md:p-8 rounded-xl shadow-2xl">
+        <header class="text-center mb-6">
+            <h1 class="text-4xl font-extrabold text-blue-800 tracking-tight">
+                Gestor de Tareas 
+            </h1>
+            <p id="auth-status" class="text-xs text-gray-500 mt-2">
+                Conectando...
+            </p>
+        </header>
+        
+        <!-- Formulario para añadir tareas -->
+        <form id="formulario-tarea" class="flex mb-6 space-x-2">
+            <input 
+                type="text" 
+                id="input_tarea"
+                placeholder="Escribe una nueva tarea..."
+                class="flex-grow p-3 border-2 border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-150"
+                required
+            >
+            <button 
+                id="nueva_tarea_btn"
+                type="submit"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-200 ease-in-out transform hover:scale-105 active:scale-95"
+            >
+                Añadir
+            </button>
+        </form>
+
+        <!-- Contador de Tareas (Observador 2) -->
+        <div id="contador" class="text-center text-sm font-medium text-gray-600 mb-4 p-2 bg-blue-50 rounded-lg shadow-inner">
+            Total: 0 | Completadas: 0
+        </div>
+        
+        <!-- Lista de Tareas (Observador 3 / Factory) -->
+        <div id="tareas" class="space-y-3">
+             <!-- Tareas inyectadas por el Factory y el Observer -->
+        </div>
+
+        <footer class="mt-8 pt-4 border-t border-gray-100 text-center text-xs text-gray-400">
+            <p>ID del Usuario: <span id="user-id-display" class="font-mono text-gray-600 text-xs">Cargando...</span></p>
+        </footer>
+    </div>
+</body>
+</html>

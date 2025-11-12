@@ -3,6 +3,7 @@
 ## Ejercicio 1: La Base - El Objeto Tarea Documentado
 
 [Ir al enunciado completo](enunciado.md#ejercicio-1-la-base---el-objeto-tarea-documentado)
+![Ej1](img/Ej1.png)
 
 ## Ejercicio 2: El Gestor Central - TaskManager (Patrón Singleton)
 

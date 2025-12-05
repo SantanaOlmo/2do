@@ -1,0 +1,125 @@
+/* General */
+body {
+    font-family: sans-serif;
+}
+
+/* Ejercicio 1 */
+body.ejercicio1 {
+    display: flex;
+    gap: 20px;
+}
+
+.ejercicio1 #zona-mouse {
+    width: 300px;
+    height: 200px;
+    border: 2px dashed blue;
+    background: #f0f8ff;
+}
+
+.ejercicio1 #zona-teclado {
+    padding: 10px;
+}
+
+.ejercicio1 #log {
+    width: 400px;
+    height: 300px;
+    border: 1px solid #ccc;
+    overflow-y: scroll;
+    list-style: none;
+    padding: 5px;
+}
+
+.ejercicio1 .highlight {
+    background: #e0f0ff;
+}
+
+/* Ejercicio 2 */
+body.ejercicio2 {
+    padding: 20px;
+}
+
+.ejercicio2 input {
+    padding: 8px;
+    font-size: 1.1em;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.ejercicio2 span {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.ejercicio2 .valido {
+    border-color: green;
+    color: green;
+}
+
+.ejercicio2 .invalido {
+    border-color: red;
+    color: red;
+}
+
+/* Ejercicio 3 */
+body.ejercicio3 {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ejercicio3 div {
+    margin-bottom: 15px;
+}
+
+.ejercicio3 label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.ejercicio3 input[type="text"],
+.ejercicio3 input[type="email"],
+.ejercicio3 input[type="password"],
+.ejercicio3 select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.ejercicio3 input.error {
+    border-color: red;
+    background-color: #fff0f0;
+}
+
+.ejercicio3 .error-msg {
+    color: red;
+    font-size: 0.9em;
+    display: block;
+    margin-top: 5px;
+    min-height: 1.2em;
+}
+
+.ejercicio3 #resumen-total {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.ejercicio3 button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.ejercicio3 button:hover {
+    background-color: #0056b3;
+}

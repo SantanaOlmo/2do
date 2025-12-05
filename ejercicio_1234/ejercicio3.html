@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RA5 - Ejercicio 3: Formulario TechConf</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="ejercicio3">
+    <h1>Inscripción a TechConf 2025</h1>
+    <form id="form-inscripcion" novalidate>
+        <div>
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre">
+            <span class="error-msg" id="error-nombre"></span>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <span class="error-msg" id="error-email"></span>
+        </div>
+        <div>
+            <label for="password">Contraseña (mín. 8, 1 mayús, 1 núm):</label>
+            <input type="password" id="password" name="password">
+            <span class="error-msg" id="error-password"></span>
+        </div>
+        <div>
+            <label for="tipo-entrada">Tipo de Entrada:</label>
+            <select id="tipo-entrada" name="tipo-entrada">
+                <option value="100">Entrada General (100€)</option>
+                <option value="300">Entrada VIP (300€)</option>
+            </select>
+        </div>
+        <div>
+            <label>Talleres Adicionales (50€ c/u):</label>
+            <input type="checkbox" id="taller-js" name="taller" value="50"> <label for="taller-js">Taller JS</label>
+            <input type="checkbox" id="taller-css" name="taller" value="50"> <label for="taller-css">Taller CSS</label>
+        </div>
+        <div id="resumen-total">Total a Pagar: 100€</div>
+        <button type="submit" id="btn-submit">Inscribirse</button>
+    </form>
+    <script defer src="app3.js"></script>
+</body>
+
+</html>
